@@ -6,7 +6,7 @@ var schemaNiveau = mongoose.Schema({
 });
 
 var Niveau = mongoose.model("niveau", schemaNiveau);
-var url = "mongodb://0.0.0.0:27017/Bhar";
+var url = "mongodb+srv://firasaydi:firas1999@bhar.a7jwa.mongodb.net/Bhar?retryWrites=true&w=majority&appName=Bhar" || "mongodb://0.0.0.0:27017/Bhar";
 
 exports.getAllNiveau = () => {
     return new Promise((resolve, reject) => {
