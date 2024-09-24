@@ -1,0 +1,28 @@
+<%- include('parts/top.ejs')%>
+<style>
+  .custom-image-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .custom-image {
+    margin-top: 100px;
+    height: 500px;
+    /* width: 200px; */
+    object-fit: contain;
+  }
+</style>
+<div class="container custom-image-container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <img src="<%= imageUrl %>" class="img-fluid custom-image" alt="">
+      <p><%=imageTitle%></p>
+      <!-- Display the image using the provided URL and title -->
+    <!-- <img src="<%= imageUrl %>" alt="<%= imageTitle %>" title="<%= imageTitle %>" /> -->
+
+    </div>
+  </div>
+</div>
+<%- include('parts/bottom.ejs')%>

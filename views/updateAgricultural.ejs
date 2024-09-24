@@ -1,0 +1,30 @@
+<%- include('parts/top.ejs')%> <br /><br /><br /><br />
+<div class="container">
+  <form method="POST" action="/GererAgricultural/update" enctype="multipart/form-data">
+    <!-- <div class="mb-3">
+      <label>Book Title</label>
+      <input type="text" class="form-control" name="Title" value="<%= agriculUpdate.Title%>"/>
+    </div> -->
+    
+    <input type="hidden" name="AgriculturalId" value="<%= agriculUpdate._id%>">
+    
+    <input type="hidden" name="oldDoc" value="<%= agriculUpdate.Doc%>">
+    <div class="mb-3">
+      <label>Agricultural</label>
+      <input type="file" accept=".pdf" class="form-control" name="Doc"/>
+    </div>
+    <% if(Smessage){ %>
+      <div class="alert alert-success">
+        <%=Smessage%>
+      </div>
+      <% }%>
+      <% if(Emessage){ %>
+      <div class="alert alert-danger">
+        <%=Emessage%>
+      </div>
+      <% }%>
+    <button type="submit" class="btn btn-primary">Update Agricultural</button>
+  </form>
+</div>
+
+<%-include('parts/bottom.ejs')%>

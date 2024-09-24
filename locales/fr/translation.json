@@ -1,0 +1,62 @@
+{
+  "navbar.Lang": "Lang",
+  "navbar.Home": "Accueil",
+  "navbar.About": "À Propos",
+  "navbar.Education": "Éducation",
+  "navbar.Drina": "Drina",
+  "navbar.Activities": "Autres Activités",
+  "navbar.Agricultural": "Agricole",
+  "navbar.Urban": "Urbaines et Rurales",
+  "navbar.Login": "Se connecter",
+  "navbar.Logout": "Se déconnecter",
+  "register.button": "S'inscrire",
+  "placeholders": {
+    "type": {
+      "Education": "Éducation",
+      "Drina": "Drina",
+      "Other Activities": "Autres Activités",
+      "Agricultural": "Agricole",
+      "Urban and Rural": "Urbaines et Rurales"
+    },
+    "name": "Nom",
+    "lastname": "Nom de famille",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "password": "Mot de passe"
+  },
+  "buttons": {
+    "login": "Connexion"
+  },
+  "niveau": {
+    "Primary": "Primaire",
+    "Secondary": "Secondaire",
+    "Faculty": "Faculté"
+  },
+  "class": {
+    "3eme": "3eme année",
+    "4eme": "4eme année",
+    "5eme": "5eme année",
+    "6eme": "6eme année",
+    "7eme": "7eme année",
+    "8eme": "8eme année",
+    "9eme": "9eme année",
+    "1 ere": "1ere année Secondaire",
+    "2 eme": "2eme année Secondaire",
+    "3 eme": "3eme année Secondaire",
+    "Bac": "Baccalauréat",
+    "1 ere faculty": "1ere année faculté",
+    "2 eme faculty": "2eme année faculté",
+    "3 eme faculty": "3eme année faculté"
+  },
+  "table.Title":"Titre",
+  "table.Actions":"Actions",
+  "table.Download":"télécharger",
+  "img.Show":"Montrer",
+  "contact.title":"Contactez-nous",
+  "contact.text":"Avez-vous des questions? N'hésitez pas à nous contacter directement. Notre équipe reviendra vers vous dans quelques heures pour vous aider.",
+  "contact.name":"Votre nom",
+  "contact.email":"Votre email",
+  "contact.subject":"Sujet",
+  "contact.message":"Votre message",
+  "contact.button":"Envoyer"
+}

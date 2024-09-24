@@ -1,0 +1,73 @@
+<%- include('parts/top.ejs') %>
+<div class="banner header-text">
+  <div class="products">
+    <div class="container">
+      <% if (cour.length > 0) { %>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <!-- <th scope="col">Document</th> -->
+              <th scope="col"><%- t('table.Title') %></th>
+              <th scope="col"><%- t('table.Actions') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let cl of cour) { %>
+              <tr>
+                <!-- <td>
+                  <i class="far fa-file-pdf"></i>
+                  <%= cl.Doc %>
+                </td> -->
+                <td><%= cl.Doc.originalname %></td>
+                <td>
+                  <a class="btn btn-primary" type="submit" href="/cour/download/<%= cl._id %>">Download</a>
+
+                  <a class="btn btn-primary" type="submit" href="/cour/update/<%= cl._id %>">Update</a>
+                  <a class="btn btn-danger" href="#" onclick="confirmDelete('/cour/delete/<%= cl._id %>')">Delete</a>
+                  <script>
+                    function confirmDelete(url) {
+                      if (confirm('Are you sure you want to delete this document?')) {
+                        window.location.href = url; // Proceed with the deletion
+                      } else {
+                        // Cancelled, do nothing
+                      }
+                    }
+                  </script>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <!-- <a class="btn btn-primary" href="/addCour">Add Cour</a> -->
+        <div class="container">
+  <form method="POST" action="/Cour" enctype="multipart/form-data">
+    <!-- <div class="mb-3">
+      <label>Cour Title</label>
+      <input type="text" class="form-control" name="Title"/>
+    </div> -->
+
+    <input type="hidden" name="Classeid" value="<%= idClass%>">
+
+    <div class="mb-3">
+      <label>Document</label>
+      <input type="file" accept=".pdf" class="form-control" name="Doc"/>
+    </div>
+    <% if(Smessage){ %>
+    <div class="alert alert-success">
+      <%=Smessage%>
+    </div>
+    <% }%>
+    <% if(Emessage){ %>
+    <div class="alert alert-danger">
+      <%=Emessage%>
+    </div>
+    <% }%>
+    <button type="submit" class="btn btn-primary">Add Cour</button>
+  </form>
+</div>
+      <% } %>
+    </div>
+  </div>
+</div>
+<%- include('parts/bottom.ejs') %>

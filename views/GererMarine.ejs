@@ -1,0 +1,64 @@
+<%- include('parts/top.ejs') %>
+  <!-- <br /><br /><br /><br /><br /><br /><br /> -->
+
+  <!-- <style>
+    .custom-image {
+      height: 100%;
+      /* Ajustez la hauteur des images selon vos besoins */
+      object-fit: cover;
+      /* Pour remplir l'espace sans déformer les images */
+    }
+
+    .btn {
+      height: 35px;
+      margin: 15px;
+    }
+  </style> -->
+  <div class="banner header-text">
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <% for (let i=0; i < photo.length; i +=2) { %>
+            <div class="col-md-6">
+              <div class="card">
+                <img src="uploads/<%= photo[i].Image %>" class="card-img-top img-fluid custom-image" alt=""
+                  style="height: 100%; object-fit: cover;">
+                <div class="card-body text-center">
+                  <h5 class="card-title">
+                    <%= photo[i].Title %>
+                  </h5>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="photo/delete/<%= photo[i]._id %>" class="btn btn-danger"
+                    style="height: 35px; margin: 15px;">x</a>
+                  <button class="btn btn-primary" style="height: 35px; margin: 15px;"
+                    onclick="window.location.href='/viewimage?image=uploads/<%= photo[i].Image %>'">Show</button>
+                </div>
+              </div>
+            </div>
+            <% if (i + 1 < photo.length) { %>
+              <div class="col-md-6">
+                <div class="card">
+                  <img src="uploads/<%= photo[i + 1].Image %>" class="card-img-top img-fluid custom-image" alt="">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">
+                      <%= photo[i + 1].Title %>
+                    </h5>
+                  </div>
+                  <div class="card-footer text-center">
+                    <a href="photo/delete/<%= photo[i + 1]._id %>" class="btn btn-danger"
+                      style="height: 35px; margin: 15px;">x</a>
+                    <button class="btn btn-primary" style="height: 35px; margin: 15px;"
+                      onclick="window.location.href='/viewimage?image=uploads/<%= photo[i+1].Image %>'">Show</button>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+                <% } %>
+                  <a href="/addphoto" class="btn btn-primary add" style="height: 35px; margin: 15px;">+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('parts/bottom.ejs') %>

@@ -1,0 +1,31 @@
+<%- include('parts/top.ejs') %>
+<div class="banner header-text">
+  <div class="products">
+    <div class="container">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <!-- <th scope="col">Document</th> -->
+              <th scope="col"><%- t('table.Title') %></th>
+              <th scope="col"><%- t('table.Actions') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let cl of cour) { %>
+              <tr>
+                <!-- <td>
+                  <i class="far fa-file-pdf"></i>
+                  <%= cl.Doc %>
+                </td> -->
+                <td><%= cl.Doc.originalname%></td>
+                <td>
+                  <a class="btn btn-primary" type="submit" href="/cour/download/<%= cl._id %>"><%- t('table.Download') %></a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+<%- include('parts/bottom.ejs') %>

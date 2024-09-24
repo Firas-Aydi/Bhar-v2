@@ -1,0 +1,33 @@
+<%- include('parts/top.ejs')%>
+  <br><br><br><br><br><br><br>
+  <div class="container">
+    <form method="POST" action="/register">
+      <!-- Name input -->
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example6" name="type" value="<%- t('placeholders.type.' + type) %>" class="form-control" placeholder="<%- t('placeholders.type') %>" readonly/>
+      </div>
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example1" name="name" class="form-control" placeholder="<%- t('placeholders.name') %>" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example2" name="lastname" class="form-control" placeholder="<%- t('placeholders.lastname') %>" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="number" id="form1Example3" name="phone" class="form-control" placeholder="<%- t('placeholders.phone') %>" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example5" name="address" class="form-control" placeholder="<%- t('placeholders.address') %>" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="password" id="form1Example4" name="password" class="form-control" placeholder="<%- t('placeholders.password') %>" />
+      </div>
+      <% if (message) {%>
+        <div class="alert alert-danger">
+          <%=message%>
+        </div>
+        <% } %>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block"><%- t('register.button') %></button>
+    </form>
+  </div>
+  <%-include('parts/bottom.ejs')%>

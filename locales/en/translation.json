@@ -1,0 +1,63 @@
+{
+  "navbar.Lang": "Lang",
+  "navbar.Home": "Home",
+  "navbar.About": "About Us",
+  "navbar.Education": "Education",
+  "navbar.Drina": "Drina",
+  "navbar.Activities": "Other Activities",
+  "navbar.Agricultural": "Agricultural",
+  "navbar.Urban": "Urban And Rural",
+  "navbar.Login": "Login",
+  "navbar.Logout": "Log out",
+  "register.button": "Register",
+  "placeholders": {
+    "type": {
+      "Education": "Education",
+      "Drina": "Drina",
+      "Other Activities": "Other Activities",
+      "Agricultural": "Agricultural",
+      "Urban and Rural": "Urban And Rural"
+    },
+    "name": "Name",
+    "lastname": "Last Name",
+    "phone": "Phone",
+    "address": "Address",
+    "password": "Password"
+  },
+  "buttons": {
+    "login": "Login"
+  },
+  "niveau": {
+    "Primary": "Primary",
+    "Secondary": "Secondary",
+    "Faculty": "Faculty"
+  },
+  "class": {
+    "3eme": "3rd class",
+    "4eme": "4th class",
+    "5eme": "5th class",
+    "6eme": "6th class",
+    "7eme": "7th class",
+    "8eme": "8th class",
+    "9eme": "9th class",
+    "1 ere": "1st class Secondary",
+    "2 eme": "2nd class Secondary",
+    "3 eme": "3rd class Secondary",
+    "Bac": "Baccalaureate",
+    "1 ere faculty": "1st class faculty",
+    "2 eme faculty": "2nd class faculty",
+    "3 eme faculty": "3rd class faculty"
+  },
+  "table.Title":"Title",
+  "table.Actions":"Actions",
+  "table.Download":"Download",
+  "img.Show":"Show",
+  "contact.title":"Contact us",
+  "contact.text":"Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.",
+  "contact.name":"Your name",
+  "contact.email":"Your email",
+  "contact.subject":"Subject",
+  "contact.message":"Your message",
+  "contact.button":"Send"
+
+}

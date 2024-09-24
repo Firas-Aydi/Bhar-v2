@@ -1,0 +1,23 @@
+<%- include('parts/top.ejs')%>
+
+  <br><br><br><br><br><br><br>
+  <div class="container">
+    <form method="POST" action="/login">
+      <!-- Phone input -->
+      <div class="form-outline mb-4">
+        <input type="number" id="form1Example1" name="phone" class="form-control" placeholder="<%- t('placeholders.phone') %>" />
+      </div>
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="form1Example2" name="password" class="form-control" placeholder="<%- t('placeholders.password') %>" />
+      </div>
+      <% if (message) {%>
+        <div class="alert alert-danger">
+          <%=message%>
+        </div>
+        <% } %>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block"><%- t('buttons.login') %></button>
+        </form>
+  </div>
+  <%-include('parts/bottom.ejs')%>

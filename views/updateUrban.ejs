@@ -1,0 +1,25 @@
+<%- include('parts/top.ejs')%> <br /><br /><br /><br />
+<div class="container">
+  <form method="POST" action="/GererUrban/update" enctype="multipart/form-data">
+    <!-- <div class="mb-3">
+      <label>Urban Title</label>
+      <input type="text" class="form-control" name="Title" value="<%= urbanUpdate.Title%>"/>
+    </div> -->
+
+    <input type="hidden" name="UrbanId" value="<%= urbanUpdate._id%>" />
+
+    <input type="hidden" name="oldDoc" value="<%= urbanUpdate.Doc%>" />
+    <div class="mb-3">
+      <label>Urban</label>
+      <input type="file" accept=".pdf" class="form-control" name="Doc" />
+    </div>
+    <% if(Smessage){ %>
+    <div class="alert alert-success"><%=Smessage%></div>
+    <% }%> <% if(Emessage){ %>
+    <div class="alert alert-danger"><%=Emessage%></div>
+    <% }%>
+    <button type="submit" class="btn btn-primary">Update Urban</button>
+  </form>
+</div>
+
+<%-include('parts/bottom.ejs')%>

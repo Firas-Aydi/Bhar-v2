@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content=" initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Bhar</title>
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/fontawesome.css" />
+    <link rel="stylesheet" href="/css/templatemo-sixteen.css" />
+    <link rel="stylesheet" href="/css/owl.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .language-dropdown {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      #language-select {
+        border: 1px solid #ccc;
+        padding: 4px;
+        border-radius: 4px;
+        background-color: #f7f7f7;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      #language-select:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <!-- <div class="navbar-nav ml-auto">
+          <li class="nav-item">
+          <a class="nav-link" href="/"><%- t('navbar.home') %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about"><%- t('navbar.about') %></a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/contact"><%- t('navbar.contact') %></a>
+        </li>
+        </div> -->
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <h2>B<em>har</em></h2>
+            <!-- <img src="../images/Flag_of_Tunisia.jpg" alt="Flag_of_Tunisia" style="height: 48px;"> -->
+          </a>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <% if(verifUser && verifType=='admin' ) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/GererEducation"
+                  ><h6><%- t('navbar.Education') %></h6></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/GererMarine"
+                  ><h6><%- t('navbar.Drina') %></h6></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/GererOtherAct"
+                  ><h6><%- t('navbar.Activities') %></h6></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/GererAgricultural"
+                  ><h6><%- t('navbar.Agricultural') %></h6></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/GererUrban"
+                  ><h6><%- t('navbar.Urban') %></h6></a
+                >
+              </li>
+              <%}else{%> <% if(verifUser && verifType=='Education' ) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/Niveau"
+                  ><%- t('navbar.Education') %></a
+                >
+              </li>
+              <%} else{ %> <% if(verifUser && verifType=='Other Activities' )
+              {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/ClientOtherAct"
+                  ><%- t('navbar.Activities') %></a
+                >
+              </li>
+              <%} else{ %> <% if(verifUser && verifType=='Drina' ) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/ClientMarine"
+                  ><%- t('navbar.Drina') %></a
+                >
+              </li>
+              <%} else{ %> <% if(verifUser && verifType=='Agricultural' ) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/ClientAgricultural"
+                  ><%- t('navbar.Agricultural') %></a
+                >
+              </li>
+              <%} else{ %> <% if(verifUser && verifType=='Urban and Rural' ) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/ClientUrban"
+                  ><%- t('navbar.Urban') %></a
+                >
+              </li>
+              <%} else{ %>
+              <li class="nav-item display-1 h1">
+                <a class="nav-link" href="/register?type=Education"
+                  ><%- t('navbar.Education') %></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register?type=Drina"
+                  ><%- t('navbar.Drina') %></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register?type=Other%20Activities"
+                  ><%- t('navbar.Activities') %></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register?type=Agricultural"
+                  ><%- t('navbar.Agricultural') %></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register?type=Urban%20and%20Rural"
+                  ><%- t('navbar.Urban') %></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login"><%- t('navbar.Login') %></a>
+              </li>
+              <% } %> <% } %> <% } %> <% } %> <% } %> <% } %>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/about"><%- t('navbar.About') %></a>
+              </li>
+            </ul>
+            <% if(verifUser) {%>
+            <form
+              class="form-inline my-2 my-lg-0"
+              method="POST"
+              action="/logout"
+            >
+              <button class="btn btn-danger btn-sm" type="submit">
+                <%- t('navbar.Logout') %>
+              </button>
+            </form>
+            <% } %>
+          </div>
+        </div>
+        <div class="language-dropdown">
+          <form id="language-form" action="/change-language" method="POST">
+            <select
+              id="language-select"
+              name="language"
+              onchange="submitForm()"
+            >
+              <option><%- t('navbar.Lang') %> :</option>
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="ar">العربية</option>
+            </select>
+          </form>
+        </div>
+        <script>
+          function submitForm() {
+            document.getElementById('language-form').submit()
+          }
+        </script>
+        <img
+          src="../images/Flag_of_Tunisia.jpg"
+          alt="Flag_of_Tunisia"
+          style="height: 48px; margin-right: 17px"
+        />
+      </nav>
+    </header>
+  </body>
+</html>

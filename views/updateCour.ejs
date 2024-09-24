@@ -1,0 +1,32 @@
+<%- include('parts/top.ejs')%> <br /><br /><br /><br />
+<div class="container">
+  <form method="POST" action="/cour/update" enctype="multipart/form-data">
+    <!-- <div class="mb-3">
+      <label>Book Title</label>
+      <input type="text" class="form-control" name="Title" value="<%= courUpdate.Title%>"/>
+    </div> -->
+    
+    <input type="hidden" name="courId" value="<%= courUpdate._id%>">
+
+    <input type="hidden" name="Classeid" value="<%= courUpdate.Classeid%>">
+    
+    <input type="hidden" name="oldDoc" value="<%= courUpdate.Doc%>">
+    <div class="mb-3">
+      <label>Cours</label>
+      <input type="file" accept=".pdf" class="form-control" name="Doc"/>
+    </div>
+    <% if(Smessage){ %>
+      <div class="alert alert-success">
+        <%=Smessage%>
+      </div>
+      <% }%>
+      <% if(Emessage){ %>
+      <div class="alert alert-danger">
+        <%=Emessage%>
+      </div>
+      <% }%>
+    <button type="submit" class="btn btn-primary">Update Cours</button>
+  </form>
+</div>
+
+<%-include('parts/bottom.ejs')%>

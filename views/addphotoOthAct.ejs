@@ -1,0 +1,17 @@
+<%- include('parts/top.ejs')%> <br /><br /><br /><br /><br /><br /><br />
+    <div class="container">
+          <form method="POST" action="/addphotoOthAct" enctype="multipart/form-data">
+             
+                <div class="mb-3">
+                      <label>Title</label>
+                      <input type="text" class="form-control" name="titre" />
+                    </div>
+                <div class="mb-3">
+                      <label>Image</label>
+                      <input type="file" accept=".jpg,.png,.jpeg" class="form-control" name="image" />
+                    </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </form>
+    </div>
+
+    <%-include('parts/bottom.ejs')%>

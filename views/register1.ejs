@@ -1,0 +1,29 @@
+<!-- <%- include('parts/top.ejs')%>
+  <br><br><br><br><br><br><br>
+
+  <div class="container">
+    <form method="POST" action="/register1">
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example5" name="type" value="<%= type %>" class="form-control" placeholder="Type" readonly/>
+      </div>
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example1" name="name" class="form-control" placeholder="Name" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example2" name="lastname" class="form-control" placeholder="lastname" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="number" id="form1Example3" name="phone" class="form-control" placeholder="Phone" />
+      </div>
+      <div class="form-outline mb-4">
+        <input type="password" id="form1Example4" name="password" class="form-control" placeholder="Password" />
+      </div>
+      <% if (message) {%>
+        <div class="alert alert-danger">
+          <%=message%>
+        </div>
+        <% } %>
+          <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+  </div>
+  <%-include('parts/bottom.ejs')%> -->

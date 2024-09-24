@@ -1,0 +1,62 @@
+<%- include('parts/top.ejs') %>
+<br /><br /><br /><br /><br /><br /><br />
+
+<style>
+  .custom-image {
+    height: 100%; /* Ajustez la hauteur des images selon vos besoins */
+    object-fit: cover; /* Pour remplir l'espace sans déformer les images */
+  }
+
+  .btn {
+    height: 35px;
+    margin: 15px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <% for (let i = 0; i < photo.length; i += 2) { %>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="uploads/<%= photo[i].Image %>" class="card-img-top img-fluid custom-image" alt="">
+          
+          <!-- <div class="card-body text-center">
+            <h5 class="card-title"><%= photo[i].Title %></h5>
+            <button class="btn btn-success" onclick="window.location.href='/viewimage?image=uploads/<%= photo[i].Image %><%= photo[i].Title %>'"><%- t('img.Show') %></button>
+          </div> -->
+          <div class="card-body text-center">
+            <h5 class="card-title"><%= photo[i].Title %></h5>
+            <button class="btn btn-success" onclick="showImage('<%= photo[i].Title %>', '<%= photo[i].Image %>')"><%- t('img.Show') %></button>
+        </div>
+        </div>
+      </div>
+      <% if (i + 1 < photo.length) { %>
+        <div class="col-md-6">
+          <div class="card">
+            <img src="uploads/<%= photo[i + 1].Image %>" class="card-img-top img-fluid custom-image" alt="">
+            
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= photo[i + 1].Title %></h5>
+              <!-- <button class="btn btn-success" onclick="window.location.href='/viewimage?image=uploads/<%= photo[i+1].Image %>'"><%- t('img.Show') %></button> -->
+              <button class="btn btn-success" onclick="showImage('<%= photo[i+1].Title %>', '<%= photo[i+1].Image %>')"><%- t('img.Show') %></button>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+</div>
+<script>
+  function showImage(title, image) {
+      // Encode the title and image URL for URL compatibility
+      var encodedTitle = encodeURIComponent(title);
+      var encodedImage = encodeURIComponent(image);
+      
+      // Construct the URL for the viewimage page with encoded parameters
+      var url = "/viewimage?title=" + encodedTitle + "&image=" +"uploads/"+ encodedImage;
+      
+      // Redirect to the viewimage page
+      window.location.href = url;
+  }
+</script>
+<%- include('parts/bottom.ejs') %>

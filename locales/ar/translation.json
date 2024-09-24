@@ -1,0 +1,64 @@
+{
+  "navbar.Lang": "اللغة",
+  "navbar.Home": "الصفحة الرئيسية",
+  "navbar.About": "معلومات عنا",
+  "navbar.Education": "تعليم",
+  "navbar.Drina": "درينا",
+  "navbar.Activities": "نشاطات أخرى",
+  "navbar.Agricultural": "زراعي",
+  "navbar.Urban": "المناطق الحضرية والريفية",
+  "navbar.Login": "تسجيل الدخول",
+  "navbar.Logout": "تسجيل الخروج",
+  "register.button": "تسجيل",
+  "placeholders": {
+    "type": {
+      "Education": "تعليم",
+      "Drina": "درينا",
+      "Other Activities": "نشاطات أخرى",
+      "Agricultural": "زراعي",
+      "Urban and Rural": "المناطق الحضرية والريفية"
+    },
+    "name": "الاسم",
+    "lastname": "اللقب",
+    "phone": "الهاتف",
+    "address": "العنوان",
+    "password": "كلمة المرور"
+  },
+  "buttons": {
+    "login": "تسجيل الدخول"
+  },
+  "niveau": {
+    "Primary": "أساسي",
+    "Secondary": "ثانوي",
+    "Faculty": "كلية"
+  },
+  "class": {
+    "3eme": "السنة الثالثة",
+    "4eme": "السنة الرابعة",
+    "5eme": "السنة الخامسة",
+    "6eme": "السنة السادسة",
+    "7eme": "السنة السابعة",
+    "8eme": "السنة الثامنة",
+    "9eme": "السنة التاسعة",
+    "1 ere": "السنة الأولى ثانوي",
+    "2 eme": "السنة الثانية ثانوي",
+    "3 eme": "السنة الثالثة ثانوي",
+    "Bac": "الباكالوريا",
+    "1 ere faculty": "السنة الأولى كلية",
+    "2 eme faculty": "السنة الثانية كلية",
+    "3 eme faculty": "السنة الثالثة كلية"
+  },
+  "table.Title":"عنوان",
+  "table.Actions":"اجراءات",
+  "table.Download":"تحميل",
+  "img.Show":"عرض",
+  "contact.title":"اتصل بنا",
+  "contact.text":"هل لديك اسئلة؟ من فضلك لا تتردد في الاتصال بنا مباشرة. سيعود فريقنا إليك في غضون ساعات لمساعدتك.",
+  "contact.name":"اسمك",
+  "contact.email":"بريدك الالكتروني",
+  "contact.subject":"موضوع",
+  "contact.message":"رسالتك",
+  "contact.button":"يرسل",
+  "contact.successMes":"<strong>Email sent successfully!</strong> Thank you for reaching out.",
+  "contact.errorMes":"<strong>Failed to send email.</strong> Please try again later."
+}

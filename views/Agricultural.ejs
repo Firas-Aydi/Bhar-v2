@@ -1,0 +1,45 @@
+<%- include('parts/top.ejs') %>
+<div class="banner header-text">
+  <div class="products">
+    <div class="container">
+      <a class="btn btn-primary" href="/addAgricultural">Add Agricultural</a><br /><br />
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <!-- <th scope="col">Document</th> -->
+              <th scope="col"><%- t('table.Title') %></th>
+              <th scope="col"><%- t('table.Actions') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let ag of agricul) { %>
+              <tr>
+                <!-- <td>
+                  <i class="far fa-file-pdf"></i>
+                  <%= ag.Doc %>
+                </td> -->
+                <td><%= ag.Doc.originalname %></td>
+                <td>
+                  <a class="btn btn-primary" type="submit" href="/GererAgricultural/download/<%= ag._id %>">Download</a>
+
+                  <a class="btn btn-primary" type="submit" href="/GererAgricultural/update/<%= ag._id %>">Update</a>
+                  <a class="btn btn-danger" href="#" onclick="confirmDelete('/GererAgricultural/delete/<%= ag._id %>')">Delete</a>
+                  <script>
+                    function confirmDelete(url) {
+                      if (confirm('Are you sure you want to delete this document?')) {
+                        window.location.href = url; // Proceed with the deletion
+                      } else {
+                        // Cancelled, do nothing
+                      }
+                    }
+                  </script>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      
+    </div>
+  </div>
+</div>
+<%- include('parts/bottom.ejs') %>
