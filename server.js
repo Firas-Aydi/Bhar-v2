@@ -48,16 +48,7 @@ app.use(
     saveUninitialized: true
   })
 )
-// app.get("/", (req, res) => {
-//   // Ajouter un type à la session
-//   req.session.type = "";
-// });
 
-// Middleware i18next pour rendre la fonction t disponible dans les templates EJS
-// app.use((req, res, next) => {
-//   res.locals.t = i18next.t.bind(i18next)
-//   next()
-// })
 app.post('/change-language', (req, res) => {
   const selectedLanguage = req.body.language; // Récupérer la langue sélectionnée depuis les données POST
   req.session.language = selectedLanguage; // Stockez la langue sélectionnée dans la session
@@ -77,10 +68,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', RouterHome)
-// app.use("/books", RouterBook);
 app.use('/', RouterAuth)
 app.use('/cour', routeMycours)
-// app.use("/", routeContact);
 
 app.use('/', routeGererEducation)
 app.use('/', routeGererMarine)
@@ -90,29 +79,18 @@ app.use('/', routeGererUrban)
 app.use('/', routeClasse)
 app.use('/', routeCours)
 app.use('/api', routePayment)
-// app.get("/dashboard", (req, res, next) => {
-//   res.render("dashboard", { verifUser: req.session.userId });
-// });
-// app.get("/tables", (req, res, next) => {
-//   res.render("tables", { verifUser: req.session.userId });
-// });
+
 app.get('/about', (req, res, next) => {
   res.render('about', {
     verifUser: req.session.userId,
     verifType: req.session.type
   })
 })
-// app.get("/mybooks", (req, res, next) => {
-//   res.render("mybooks", { verifUser: req.session.userId });
-// });
-// app.get("/books", (req, res, next) => {
-//   res.render("books");
-// });
-// app.get("/details", (req, res, next) => {
-//   res.render("details");
-// });
-// app.get("/login", (req, res, next) => {
-//   res.render("login");
-// });
 
-app.listen(3000, () => console.log('server run on port 3000'))
+// Utiliser la variable d'environnement `PORT` fournie par Render
+const port = process.env.PORT || 3000;
+
+// Lier l'application à l'adresse '0.0.0.0' et au port fourni
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+});
