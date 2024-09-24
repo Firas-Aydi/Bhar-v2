@@ -11,7 +11,8 @@ var schemaAuth = mongoose.Schema({
 });
 
 var User = mongoose.model("user", schemaAuth);
-var url = "mongodb+srv://firasaydi:firas1999@bhar.a7jwa.mongodb.net/Bhar?retryWrites=true&w=majority&appName=Bhar" || "mongodb://0.0.0.0:27017/Bhar";
+// var url = "mongodb+srv://firasaydi:firas1999@bhar.a7jwa.mongodb.net/Bhar?retryWrites=true&w=majority&appName=Bhar" || "mongodb://0.0.0.0:27017/Bhar";
+var url= process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/Bhar';
 
 exports.registerFunctionModel = (name, lastname, phone, address, password, type) => {
   // test phone if exist(true go to login) (false add new user)

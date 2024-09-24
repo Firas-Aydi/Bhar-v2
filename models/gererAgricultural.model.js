@@ -13,7 +13,8 @@ var schemaAgricul = mongoose.Schema({
 });
 
 var Agricultural = mongoose.model("agricultural", schemaAgricul);
-var url = "mongodb+srv://firasaydi:firas1999@bhar.a7jwa.mongodb.net/Bhar?retryWrites=true&w=majority&appName=Bhar" || "mongodb://0.0.0.0:27017/Bhar";
+// var url = "mongodb+srv://firasaydi:firas1999@bhar.a7jwa.mongodb.net/Bhar?retryWrites=true&w=majority&appName=Bhar" || "mongodb://0.0.0.0:27017/Bhar";
+var url= process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/Bhar';
 
 exports.getAgricultural = () => {
     return new Promise((resolve, reject) => {

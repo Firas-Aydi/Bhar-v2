@@ -30,7 +30,8 @@ app.set('view engine', 'ejs')
 app.set('views', 'views')
 
 var store = new MongoDBStore({
-  uri: "mongodb+srv://firasaydi:firas1999@bhar.a7jwa.mongodb.net/Bhar?retryWrites=true&w=majority&appName=Bhar" || 'mongodb://0.0.0.0:27017/Bhar',
+  // uri: 'mongodb://0.0.0.0:27017/Bhar',
+  uri: process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/Bhar',
   collection: 'sessions'
 })
 const mongoose = require('mongoose')
